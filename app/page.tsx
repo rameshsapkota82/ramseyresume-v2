@@ -1,10 +1,39 @@
 import type { Metadata } from "next";
-import { CheckCircle, FileText, MessageCircle, ScanSearch, Star } from "lucide-react";
+import {
+  BadgeCheck,
+  BriefcaseBusiness,
+  Calculator,
+  CheckCircle,
+  ChevronRight,
+  FileCheck,
+  FileText,
+  GraduationCap,
+  HardHat,
+  HeartPulse,
+  Landmark,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  MonitorCog,
+  PenLine,
+  Phone,
+  Quote,
+  ScanSearch,
+  School,
+  SearchCheck,
+  ShieldCheck,
+  Star,
+  Target,
+  Upload,
+  Wrench,
+} from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { PlaceholderSection } from "@/components/sections/PlaceholderSection";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -15,33 +44,188 @@ export const metadata: Metadata = createMetadata({
   path: "/",
 });
 
-const servicePlaceholders = [
-  "Resume Writing",
-  "ATS Resume Writing",
-  "Cover Letter Writing",
-  "Selection Criteria",
-  "LinkedIn Optimisation",
-  "Government Applications",
+const trustBadges = [
+  {
+    title: "ATS-friendly documents",
+    text: "Clean structure, relevant keywords and readable formatting for modern recruitment systems.",
+    icon: ScanSearch,
+  },
+  {
+    title: "Perth-based support",
+    text: "Local Western Australian understanding with remote support available across Australia.",
+    icon: MapPin,
+  },
+  {
+    title: "Role-tailored writing",
+    text: "Documents written around your target role, industry and career direction.",
+    icon: Target,
+  },
+  {
+    title: "Word and PDF delivery",
+    text: "Practical final files suitable for online applications, recruiters and future updates.",
+    icon: FileCheck,
+  },
 ];
+
+const services = [
+  {
+    title: "Resume Writing",
+    text: "Professional resume writing for Australian job seekers who need a clear, polished and targeted resume.",
+    href: "/resume-writing/",
+    icon: FileText,
+  },
+  {
+    title: "ATS Resume Writing",
+    text: "Clean, keyword-aligned resumes designed to support applicant tracking system readability.",
+    href: "/ats-resume-writing/",
+    icon: ScanSearch,
+  },
+  {
+    title: "Cover Letter Writing",
+    text: "Tailored cover letters that connect your experience to the role and strengthen your first impression.",
+    href: "/cover-letter-writing/",
+    icon: Mail,
+  },
+  {
+    title: "Selection Criteria",
+    text: "Evidence-based responses for government and structured applications requiring clear examples.",
+    href: "/selection-criteria-writing/",
+    icon: Landmark,
+  },
+  {
+    title: "LinkedIn Optimisation",
+    text: "A stronger LinkedIn profile that aligns with your resume and supports recruiter discovery.",
+    href: "/linkedin-profile-optimisation/",
+    icon: Linkedin,
+  },
+  {
+    title: "Government Applications",
+    text: "Targeted resumes and supporting documents for public sector, council, state and federal roles.",
+    href: "/government-resume-writing/",
+    icon: BriefcaseBusiness,
+  },
+];
+
+const industries = [
+  { title: "Nursing", href: "/nursing-resume-writing/", icon: HeartPulse },
+  { title: "Teaching", href: "/teacher-resume-writing/", icon: School },
+  { title: "IT", href: "/it-resume-writing/", icon: MonitorCog },
+  { title: "Accounting", href: "/accountant-resume-writing/", icon: Calculator },
+  { title: "Engineering", href: "/engineer-resume-writing/", icon: Wrench },
+  { title: "FIFO and Mining", href: "/fifo-resume-writing/", icon: HardHat },
+  { title: "Graduates", href: "/graduate-resume-writing/", icon: GraduationCap },
+  { title: "Government", href: "/government-resume-writing/", icon: Landmark },
+];
+
+const processSteps = [
+  {
+    title: "Send your resume",
+    text: "Upload your current resume, old documents or career notes. If you are starting from scratch, share what you have.",
+    icon: Upload,
+  },
+  {
+    title: "Share your target role",
+    text: "Tell us the job title, industry, level or advertisement you are applying for.",
+    icon: Target,
+  },
+  {
+    title: "Review and strategy",
+    text: "We identify gaps in structure, wording, ATS readability, achievements and role alignment.",
+    icon: SearchCheck,
+  },
+  {
+    title: "Professional writing",
+    text: "Your documents are written around your background, target role and Australian hiring expectations.",
+    icon: PenLine,
+  },
+];
+
+const faqs = [
+  {
+    question: "Do you provide resume writing services in Perth only?",
+    answer:
+      "Ramsey Resume is Perth-based and supports job seekers across Western Australia and Australia-wide. The process can be completed remotely by phone, email, online form or WhatsApp.",
+  },
+  {
+    question: "What is a free resume review?",
+    answer:
+      "A free resume review is a starting point where you send your current resume and share your target role. Ramsey Resume reviews the document and recommends what needs improvement, such as structure, wording, ATS formatting, role targeting or missing achievements.",
+  },
+  {
+    question: "Can you make my resume ATS-friendly?",
+    answer:
+      "Yes. ATS-friendly resume writing focuses on clean formatting, clear headings, relevant role keywords and readable content. No resume can guarantee an interview, but a clean structure helps your document remain practical for online applications.",
+  },
+  {
+    question: "Do you write cover letters and selection criteria?",
+    answer:
+      "Yes. Ramsey Resume can help with tailored cover letters and evidence-based selection criteria responses for government and structured applications.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Start by requesting a free resume review. Upload your current resume, share your target role and Ramsey Resume will recommend the most suitable next step.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  telephone: "+61438782206",
+  email: siteConfig.email,
+  areaServed: ["Perth", "Western Australia", "Australia"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Perth",
+    addressRegion: "WA",
+    addressCountry: "AU",
+  },
+  description:
+    "Professional resume writing, cover letter, LinkedIn profile and selection criteria support for Australian job seekers.",
+};
 
 export default function Home() {
   return (
     <>
-      <Section className="bg-soft">
+      <JsonLd data={localBusinessSchema} />
+      <JsonLd data={faqSchema} />
+
+      <Section className="overflow-hidden bg-soft">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-teal shadow-card">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-teal shadow-card">
                 <CheckCircle aria-hidden="true" size={17} />
-                Perth-based. Australia-wide.
+                Perth-based resume support. Australia-wide service.
               </p>
               <h1 className="font-display text-4xl font-extrabold leading-tight text-navy md:text-5xl lg:text-6xl">
                 Professional Resume Writing Services in Perth & Australia-Wide
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-                A fast, SEO-first foundation for Ramsey Resume. The full homepage content will be
-                built in the next phase using premium sections, strong CTAs, trust proof and
-                mobile-first layouts.
+                Get an ATS-friendly resume, cover letter, LinkedIn profile or selection criteria
+                response written for Australian job seekers who want stronger applications, more
+                confidence and better interview opportunities.
+              </p>
+              <p className="mt-4 max-w-2xl leading-8 text-muted">
+                Ramsey Resume helps clients across Perth, Western Australia and Australia present
+                their experience with clarity, strategy and professionalism. Your application should
+                do more than list duties. It should show your value, match the role and make it easy
+                for employers to understand why you are the right fit.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/get-a-quote/">Get a Free Resume Review</Button>
@@ -50,77 +234,381 @@ export default function Home() {
                   WhatsApp Us
                 </Button>
               </div>
+              <ul className="mt-8 grid gap-3 text-sm font-semibold text-ink sm:grid-cols-2">
+                {[
+                  "ATS-friendly resume writing",
+                  "Government, FIFO and professional applications",
+                  "Word and PDF delivery",
+                  "Fast turnaround options available",
+                ].map((item) => (
+                  <li className="flex items-center gap-2" key={item}>
+                    <CheckCircle aria-hidden="true" className="text-teal" size={18} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <Card className="min-h-[320px] bg-white">
-              <div className="flex h-full min-h-[280px] flex-col justify-between rounded-lg bg-gradient-to-br from-white to-soft p-6">
-                <FileText className="text-brand" size={48} />
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-wide text-teal">
-                    Resume Review Preview
+
+            <div className="relative">
+              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-gold/15 blur-3xl" />
+              <Card className="relative overflow-hidden p-0">
+                <div className="bg-navy px-6 py-5 text-white">
+                  <p className="text-sm font-bold uppercase tracking-wide text-white/70">
+                    Free Resume Review
                   </p>
-                  <h2 className="mt-3 font-display text-3xl font-extrabold text-navy">
-                    Placeholder for premium resume mockup
+                  <h2 className="mt-2 font-display text-2xl font-extrabold text-white">
+                    See what your resume needs before your next application.
                   </h2>
-                  <p className="mt-3 text-muted">
-                    Image assets will be added after the visual direction is approved.
-                  </p>
                 </div>
-              </div>
-            </Card>
+                <div className="space-y-4 p-6">
+                  {["Professional profile", "Key skills", "Career achievements", "ATS structure"].map(
+                    (item) => (
+                      <div className="rounded-lg border border-line bg-soft p-4" key={item}>
+                        <div className="mb-2 h-3 w-1/2 rounded-full bg-brand/25" />
+                        <div className="h-2 w-full rounded-full bg-line" />
+                        <div className="mt-2 h-2 w-4/5 rounded-full bg-line" />
+                        <span className="sr-only">{item}</span>
+                      </div>
+                    ),
+                  )}
+                </div>
+              </Card>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-white">
+        <Container>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {trustBadges.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <Card className="shadow-none" key={badge.title}>
+                  <Icon aria-hidden="true" className="mb-4 text-teal" size={30} />
+                  <h2 className="font-display text-xl font-bold text-navy">{badge.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{badge.text}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-soft">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-teal">Trust proof</p>
+              <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+                Trusted support for Australian job seekers
+              </h2>
+              <p className="mt-4 leading-8 text-muted">
+                Choosing a resume writer requires trust. Use this section for verified Google
+                reviews, approved client comments and real outcome stories only.
+              </p>
+              <p className="mt-4 rounded-lg border border-gold/30 bg-white p-4 text-sm leading-6 text-muted">
+                Placeholder: connect genuine Google reviews here once the review source is verified.
+                Do not add fake review counts, ratings or success rates.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {["Google review placeholder", "Client outcome placeholder", "Case study placeholder"].map(
+                (item) => (
+                  <Card key={item}>
+                    <div className="flex gap-1 text-gold" aria-label="Review placeholder">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <Star aria-hidden="true" fill="currentColor" key={index} size={16} />
+                      ))}
+                    </div>
+                    <Quote aria-hidden="true" className="mt-5 text-brand" size={26} />
+                    <p className="mt-4 text-sm leading-6 text-muted">
+                      {item}. Replace this card with a genuine review before publishing public
+                      testimonial claims.
+                    </p>
+                  </Card>
+                ),
+              )}
+            </div>
           </div>
         </Container>
       </Section>
 
       <Section>
         <Container>
-          <div className="grid gap-4 md:grid-cols-3">
-            {["ATS-friendly", "Australian job market", "Fast enquiry paths"].map((badge) => (
-              <Card key={badge}>
-                <ScanSearch aria-hidden="true" className="mb-4 text-teal" size={28} />
-                <h2 className="font-display text-xl font-bold text-navy">{badge}</h2>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  Placeholder trust badge for the approved homepage design.
-                </p>
-              </Card>
+          <SectionHeader
+            eyebrow="Resume services"
+            title="Professional resume and career writing services"
+            text="Choose the support you need, or start with a free review if you are unsure which service is right for your next application."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Card className="transition hover:-translate-y-1 hover:border-brand" key={service.title}>
+                  <Icon aria-hidden="true" className="mb-5 text-brand" size={32} />
+                  <h3 className="font-display text-xl font-bold text-navy">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{service.text}</p>
+                  <Link
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal hover:text-teal-dark"
+                    href={service.href}
+                  >
+                    Learn more
+                    <ChevronRight aria-hidden="true" size={16} />
+                  </Link>
+                </Card>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-soft">
+        <Container>
+          <SectionHeader
+            eyebrow="Industries"
+            title="Resume support for your industry"
+            text="Different industries look for different evidence. Ramsey Resume adapts your documents to the industry, employer and role you are targeting."
+          />
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {industries.map((industry) => {
+              const Icon = industry.icon;
+              return (
+                <Link
+                  className="rounded-card border border-line bg-white p-5 text-center shadow-card transition hover:-translate-y-1 hover:border-brand"
+                  href={industry.href}
+                  key={industry.title}
+                >
+                  <Icon aria-hidden="true" className="mx-auto text-teal" size={30} />
+                  <h3 className="mt-4 font-display text-base font-bold text-navy">
+                    {industry.title}
+                  </h3>
+                </Link>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-teal">ATS expertise</p>
+              <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+                ATS resume writing that still sounds human
+              </h2>
+              <p className="mt-5 leading-8 text-muted">
+                Many Australian employers use applicant tracking systems to receive, sort and search
+                job applications. An ATS-friendly resume is not about forcing keywords into every
+                sentence. It is about building a clear, structured document that reflects your
+                experience, aligns with the role and remains easy for recruiters to read.
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Button href="/ats-resume-writing/">Improve My ATS Resume</Button>
+                <Button href="/get-a-quote/" variant="secondary">
+                  Get a Free Resume Review
+                </Button>
+              </div>
+            </div>
+            <Card>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "Clear resume sections",
+                  "Role-specific keywords",
+                  "Readable formatting",
+                  "Achievement-focused bullets",
+                  "Australian spelling",
+                  "Word and PDF delivery",
+                ].map((item) => (
+                  <div className="flex items-start gap-3 rounded-lg bg-soft p-4" key={item}>
+                    <ShieldCheck aria-hidden="true" className="mt-0.5 text-teal" size={20} />
+                    <span className="text-sm font-semibold text-ink">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-soft">
+        <Container>
+          <SectionHeader
+            eyebrow="Process"
+            title="A clear process from first review to final documents"
+            text="You do not need to have everything prepared before getting started. Send what you have, share your target role and we will guide the next step."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <Card key={step.title}>
+                  <div className="mb-5 flex items-center justify-between">
+                    <Icon aria-hidden="true" className="text-brand" size={30} />
+                    <span className="font-display text-3xl font-extrabold text-line">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-navy">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
+                </Card>
+              );
+            })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-teal">Pricing preview</p>
+              <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+                Resume writing packages and pricing
+              </h2>
+              <p className="mt-5 leading-8 text-muted">
+                Your package depends on your career level, current documents, target role,
+                application requirements and turnaround time. Start with a free review if you are
+                unsure what you need.
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Button href="/pricing/" variant="secondary">
+                  View Pricing
+                </Button>
+                <Button href="/get-a-quote/">Request My Quote</Button>
+              </div>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {["Resume Essentials", "Resume + Cover Letter", "Complete Support"].map((item) => (
+                <Card className={item === "Resume + Cover Letter" ? "border-teal" : ""} key={item}>
+                  <BadgeCheck aria-hidden="true" className="mb-4 text-teal" size={28} />
+                  <h3 className="font-display text-xl font-bold text-navy">{item}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    Package details and exact pricing should stay aligned with the pricing page.
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-soft">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-teal">Resume samples</p>
+              <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+                Before-and-after improvements
+              </h2>
+              <p className="mt-5 leading-8 text-muted">
+                A strong resume is easy to scan, clearly structured and focused on the role you
+                want. For privacy, all public samples should use fictional or anonymised details.
+              </p>
+              <Button className="mt-7" href="/resume-examples/" variant="secondary">
+                View Resume Examples
+              </Button>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <ComparisonCard
+                title="Before"
+                text="Long duty-based bullet points, unclear achievements, weak summary, inconsistent formatting and limited role targeting."
+              />
+              <ComparisonCard
+                title="After"
+                text="Clear professional profile, targeted keywords, achievement-led bullet points, improved structure and stronger role relevance."
+              />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionHeader
+            eyebrow="FAQ"
+            title="Frequently asked questions"
+            text="Answers to common questions about resume writing, ATS resumes, cover letters, selection criteria and getting started."
+          />
+          <div className="mx-auto mt-10 max-w-3xl divide-y divide-line rounded-card border border-line bg-white">
+            {faqs.map((faq) => (
+              <details className="group p-5" key={faq.question}>
+                <summary className="cursor-pointer list-none font-display text-lg font-bold text-navy">
+                  <span className="flex items-center justify-between gap-4">
+                    {faq.question}
+                    <ChevronRight
+                      aria-hidden="true"
+                      className="shrink-0 text-teal transition group-open:rotate-90"
+                      size={20}
+                    />
+                  </span>
+                </summary>
+                <p className="mt-4 leading-7 text-muted">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </Container>
       </Section>
 
-      <PlaceholderSection
-        eyebrow="Services"
-        title="Homepage service sections are ready for content"
-        description="This foundation includes placeholder service cards so the layout can be expanded without changing the architecture."
-      >
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {servicePlaceholders.map((service) => (
-            <Card key={service}>
-              <h3 className="font-display text-xl font-bold text-navy">{service}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                Placeholder copy. Full implementation-ready content will be added in Phase 2.
-              </p>
-            </Card>
-          ))}
-        </div>
-      </PlaceholderSection>
-
-      <PlaceholderSection
-        eyebrow="Proof"
-        title="Reviews, process, FAQ and lead form placeholders"
-        description="Future homepage sections will use the same reusable card, section and CTA components created in this foundation."
-      >
-        <div className="grid gap-4 md:grid-cols-3">
-          {["Google Reviews", "Our Process", "Free Resume Review Form"].map((item) => (
-            <Card key={item}>
-              <Star aria-hidden="true" className="mb-4 text-gold" size={28} />
-              <h3 className="font-display text-xl font-bold text-navy">{item}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                Placeholder section reserved for the next build phase.
-              </p>
-            </Card>
-          ))}
-        </div>
-      </PlaceholderSection>
+      <Section className="bg-navy text-white">
+        <Container className="text-center">
+          <p className="text-sm font-bold uppercase tracking-wide text-gold">Ready to apply?</p>
+          <h2 className="mx-auto mt-3 max-w-3xl font-display text-3xl font-extrabold text-white md:text-5xl">
+            Start with a free resume review before your next application.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-8 text-white/75">
+            If your current resume feels outdated, generic or difficult to tailor, Ramsey Resume
+            can help you take the next step with clearer, stronger career documents.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button href="/get-a-quote/">Get a Free Resume Review</Button>
+            <Button href={siteConfig.whatsappHref} variant="whatsapp">
+              <MessageCircle aria-hidden="true" className="mr-2" size={18} />
+              WhatsApp Us
+            </Button>
+            <Button href={siteConfig.phoneHref} variant="ghost">
+              <Phone aria-hidden="true" className="mr-2" size={18} />
+              Call {siteConfig.phoneDisplay}
+            </Button>
+          </div>
+        </Container>
+      </Section>
     </>
+  );
+}
+
+function SectionHeader({
+  eyebrow,
+  title,
+  text,
+}: {
+  eyebrow: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      <p className="text-sm font-bold uppercase tracking-wide text-teal">{eyebrow}</p>
+      <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+        {title}
+      </h2>
+      <p className="mt-4 text-base leading-8 text-muted md:text-lg">{text}</p>
+    </div>
+  );
+}
+
+function ComparisonCard({ title, text }: { title: string; text: string }) {
+  return (
+    <Card>
+      <h3 className="font-display text-2xl font-bold text-navy">{title}</h3>
+      <div className="mt-5 space-y-3 rounded-lg bg-soft p-4" aria-hidden="true">
+        <div className="h-3 w-1/2 rounded-full bg-brand/25" />
+        <div className="h-2 w-full rounded-full bg-line" />
+        <div className="h-2 w-11/12 rounded-full bg-line" />
+        <div className="h-2 w-4/5 rounded-full bg-line" />
+      </div>
+      <p className="mt-5 text-sm leading-6 text-muted">{text}</p>
+    </Card>
   );
 }

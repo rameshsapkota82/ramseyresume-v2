@@ -20,7 +20,7 @@ export function Header() {
                 {item.label}
               </Link>
               {item.children ? (
-                <div className="invisible absolute left-0 top-full min-w-64 translate-y-2 rounded-card border border-line bg-white p-3 opacity-0 shadow-soft transition group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full min-w-64 translate-y-2 rounded-card border border-line bg-white p-3 opacity-0 shadow-soft transition group-focus-within:visible group-focus-within:translate-y-3 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
                   {item.children.map((child) => (
                     <Link
                       className="block rounded-lg px-3 py-2 text-sm text-muted hover:bg-soft hover:text-brand"
