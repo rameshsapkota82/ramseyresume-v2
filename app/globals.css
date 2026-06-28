@@ -1,0 +1,36 @@
+@import "../styles/tokens.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--rr-white);
+  color: var(--rr-text);
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.18);
+}
+
+:focus-visible {
+  outline: 3px solid var(--rr-gold);
+  outline-offset: 3px;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--rr-navy);
+    font-family: var(--font-manrope), Manrope, Inter, Arial, sans-serif;
+    letter-spacing: 0;
+  }
+}

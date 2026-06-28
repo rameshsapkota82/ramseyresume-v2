@@ -1,0 +1,19 @@
+:root {
+  --rr-navy: #0b1f3a;
+  --rr-blue: #1769aa;
+  --rr-teal: #0f766e;
+  --rr-teal-hover: #0b5f59;
+  --rr-gold: #d89b2b;
+  --rr-text: #1f2937;
+  --rr-muted: #5b6573;
+  --rr-border: #e8eef5;
+  --rr-soft: #f6f8fb;
+  --rr-white: #ffffff;
+  --rr-footer: #07182d;
+  --rr-success: #15803d;
+  --rr-warning: #b45309;
+  --rr-error: #b91c1c;
+  --rr-whatsapp: #25d366;
+  --rr-radius-card: 12px;
+  --rr-radius-button: 8px;
+}
