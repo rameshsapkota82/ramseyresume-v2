@@ -20,6 +20,7 @@ export function generateStaticParams() {
     "selection-criteria-writing",
     "linkedin-profile-optimisation",
     "government-resume-writing",
+    "executive-resume-writing",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));

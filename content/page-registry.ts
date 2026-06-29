@@ -360,10 +360,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Executive Resume Writing Australia | Ramsey Resume",
     description:
       "Executive resume writing support for Australian managers, leaders and senior professionals.",
+    status: "production",
     eyebrow: "Specialist Resume Services",
     h1: "Executive Resume Writing",
     intro:
-      "This specialist page will focus on leadership positioning, executive achievements, commercial impact and senior career narratives.",
+      "Executive resume writing for Australian managers, leaders and senior professionals who need stronger leadership positioning and senior career narratives.",
   }),
   page({
     slug: "government-resume-writing",
