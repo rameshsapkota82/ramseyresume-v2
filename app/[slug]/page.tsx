@@ -18,6 +18,7 @@ export function generateStaticParams() {
     "ats-resume-writing",
     "cover-letter-writing",
     "selection-criteria-writing",
+    "linkedin-profile-optimisation",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));

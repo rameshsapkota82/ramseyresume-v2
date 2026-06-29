@@ -95,10 +95,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "LinkedIn Profile Optimisation Australia | Ramsey Resume",
     description:
       "LinkedIn profile optimisation for Australian professionals who want stronger recruiter visibility and career positioning.",
+    status: "production",
     eyebrow: "Career Services",
     h1: "LinkedIn Profile Optimisation",
     intro:
-      "This page will explain how LinkedIn profile optimisation aligns your online profile with your resume, target role and recruiter search behaviour.",
+      "LinkedIn profile optimisation for Australian professionals who want clearer positioning, stronger recruiter relevance and better alignment with their resume.",
   }),
   page({
     slug: "career-coaching",
