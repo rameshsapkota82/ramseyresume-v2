@@ -327,10 +327,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Resume Writer Perth | Professional Resume Writing Services",
     description:
       "Perth resume writer supporting Western Australian job seekers with professional resumes and career documents.",
+    status: "production",
     eyebrow: "Local SEO",
     h1: "Resume Writer Perth",
     intro:
-      "This local page will target Perth job seekers looking for professional resume writing support from a Western Australia-based service.",
+      "Perth resume writer helping WA job seekers with professional resumes, ATS resumes, cover letters, LinkedIn profiles and government applications.",
   }),
   page({
     slug: "resume-writer-western-australia",

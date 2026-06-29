@@ -23,6 +23,7 @@ export function generateStaticParams() {
     "executive-resume-writing",
     "graduate-resume-writing",
     "fifo-resume-writing",
+    "resume-writer-perth",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));
