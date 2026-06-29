@@ -13,7 +13,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return pageSlugs.map((slug) => ({ slug }));
+  return pageSlugs.filter((slug) => slug !== "resume-writing").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

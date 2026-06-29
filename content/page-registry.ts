@@ -37,8 +37,9 @@ export const sitePages: SitePage[] = [
       "Professional resume writing services for Australian job seekers. Perth-based support available Australia-wide.",
     eyebrow: "Resume Services",
     h1: "Resume Writing Services Australia",
+    status: "production",
     intro:
-      "A complete production service page is planned for professional resume writing. This page will explain the process, benefits, inclusions, pricing and free resume review pathway for Australian job seekers.",
+      "Professional resume writing services for Australian job seekers who need clearer positioning, stronger achievements, ATS-aware structure and practical application documents.",
     links: [
       { label: "ATS Resume Writing", href: "/ats-resume-writing/" },
       { label: "Cover Letter Writing", href: "/cover-letter-writing/" },
