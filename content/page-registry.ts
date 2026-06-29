@@ -77,10 +77,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Selection Criteria Writing Service Australia | Ramsey Resume",
     description:
       "Selection criteria writing support for Australian government and structured job applications.",
+    status: "production",
     eyebrow: "Career Services",
     h1: "Selection Criteria Writing Service",
     intro:
-      "This page will become the dedicated selection criteria service page for government and structured applications requiring clear evidence-based responses.",
+      "Selection criteria writing for Australian government and structured applications requiring clear, evidence-based responses.",
     links: [
       { label: "Government Resume Writing", href: "/government-resume-writing/" },
       { label: "Cover Letter Writing", href: "/cover-letter-writing/" },

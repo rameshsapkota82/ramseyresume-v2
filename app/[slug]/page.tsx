@@ -13,7 +13,12 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  const productionRoutes = new Set(["resume-writing", "ats-resume-writing", "cover-letter-writing"]);
+  const productionRoutes = new Set([
+    "resume-writing",
+    "ats-resume-writing",
+    "cover-letter-writing",
+    "selection-criteria-writing",
+  ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));
 }
