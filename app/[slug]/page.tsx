@@ -21,6 +21,7 @@ export function generateStaticParams() {
     "linkedin-profile-optimisation",
     "government-resume-writing",
     "executive-resume-writing",
+    "graduate-resume-writing",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));

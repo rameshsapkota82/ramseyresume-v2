@@ -384,10 +384,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Graduate Resume Writing Australia | Ramsey Resume",
     description:
       "Graduate resume writing support for Australian students, graduates and early-career job seekers.",
+    status: "production",
     eyebrow: "Specialist Resume Services",
     h1: "Graduate Resume Writing",
     intro:
-      "This specialist page will help graduates present study, placements, part-time work, projects and early experience with confidence.",
+      "Graduate resume writing for Australian students, graduates and early-career job seekers who need to present study, projects, placements and early experience clearly.",
   }),
   page({
     slug: "fifo-resume-writing",
