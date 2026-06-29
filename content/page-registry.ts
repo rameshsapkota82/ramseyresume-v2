@@ -65,10 +65,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Cover Letter Writing Service Australia | Ramsey Resume",
     description:
       "Tailored cover letter writing support for Australian job seekers applying for professional, government and industry roles.",
+    status: "production",
     eyebrow: "Career Services",
     h1: "Cover Letter Writing Service",
     intro:
-      "This page will explain how a tailored cover letter supports a stronger application by connecting your experience to the employer, role and industry.",
+      "Professional cover letter writing for Australian job seekers who need a tailored, role-specific application letter that supports their resume.",
   }),
   page({
     slug: "selection-criteria-writing",
