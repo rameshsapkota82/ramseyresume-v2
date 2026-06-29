@@ -339,10 +339,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Resume Writer Western Australia | Ramsey Resume",
     description:
       "Professional resume writing support for job seekers across Western Australia.",
+    status: "production",
     eyebrow: "Local SEO",
     h1: "Resume Writer Western Australia",
     intro:
-      "This local page will support job seekers across Western Australia, including Perth, regional WA, FIFO and remote applicants.",
+      "Resume writing support for Western Australian job seekers, including Perth, regional WA, FIFO and remote applicants.",
   }),
   page({
     slug: "resume-writing-australia",
@@ -350,10 +351,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Resume Writing Australia | Professional Resume Service",
     description:
       "Professional resume writing services for Australian job seekers across industries and career levels.",
+    status: "production",
     eyebrow: "National SEO",
     h1: "Resume Writing Australia",
     intro:
-      "This national page will target job seekers across Australia who need professional resume writing and application support.",
+      "Professional resume writing services for Australian job seekers across industries, locations and career levels.",
   }),
   page({
     slug: "executive-resume-writing",
