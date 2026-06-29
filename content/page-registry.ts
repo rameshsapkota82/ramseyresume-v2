@@ -396,10 +396,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "FIFO Resume Writing Australia | Ramsey Resume",
     description:
       "FIFO and mining resume writing support for Western Australian and Australian resources job seekers.",
+    status: "production",
     eyebrow: "Specialist Resume Services",
     h1: "FIFO Resume Writing",
     intro:
-      "This specialist page will focus on FIFO, mining, resources, shutdown, trades and site-based applications.",
+      "FIFO resume writing for Western Australian and Australian mining, resources, shutdown, trades and site-based applications.",
   }),
   page({
     slug: "nursing-resume-writing",

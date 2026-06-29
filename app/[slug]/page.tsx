@@ -22,6 +22,7 @@ export function generateStaticParams() {
     "government-resume-writing",
     "executive-resume-writing",
     "graduate-resume-writing",
+    "fifo-resume-writing",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));
