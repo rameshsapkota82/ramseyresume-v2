@@ -116,7 +116,7 @@ export function LeadForm({ type }: LeadFormProps) {
           <div className="flex gap-3">
             <Upload aria-hidden="true" className="mt-1 shrink-0 text-brand" size={20} />
             <div>
-              <p className="text-sm font-bold text-navy">Resume upload placeholder</p>
+              <p className="text-sm font-bold text-navy">Resume upload note</p>
               <p className="mt-1 text-sm leading-6 text-muted">
                 Secure file upload will be connected when an email/form provider is selected.
                 Until then, submit the form and email your resume to{" "}

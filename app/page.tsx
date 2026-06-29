@@ -23,7 +23,6 @@ import {
   School,
   SearchCheck,
   ShieldCheck,
-  Star,
   Target,
   Upload,
   Wrench,
@@ -308,23 +307,19 @@ export default function Home() {
                 reviews, approved client comments and real outcome stories only.
               </p>
               <p className="mt-4 rounded-lg border border-gold/30 bg-white p-4 text-sm leading-6 text-muted">
-                Placeholder: connect genuine Google reviews here once the review source is verified.
-                Do not add fake review counts, ratings or success rates.
+                Verified Google reviews can be connected here once the review source is available.
+                No fake review counts, ratings or success rates are displayed.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
-              {["Google review placeholder", "Client outcome placeholder", "Case study placeholder"].map(
+              {["Verified review source", "Approved client comments", "Real case examples"].map(
                 (item) => (
                   <Card key={item}>
-                    <div className="flex gap-1 text-gold" aria-label="Review placeholder">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <Star aria-hidden="true" fill="currentColor" key={index} size={16} />
-                      ))}
-                    </div>
                     <Quote aria-hidden="true" className="mt-5 text-brand" size={26} />
+                    <h3 className="mt-4 font-display text-lg font-bold text-navy">{item}</h3>
                     <p className="mt-4 text-sm leading-6 text-muted">
-                      {item}. Replace this card with a genuine review before publishing public
-                      testimonial claims.
+                      Reserved for verified proof only. Connect genuine reviews or approved client
+                      feedback before public testimonial claims are shown.
                     </p>
                   </Card>
                 ),

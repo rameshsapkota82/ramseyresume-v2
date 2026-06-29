@@ -23,7 +23,6 @@ import {
   School,
   SearchCheck,
   ShieldCheck,
-  Star,
   Target,
   Upload,
   Wrench,
@@ -663,22 +662,17 @@ export default function ResumeWritingPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {[
-                "Professional resume client",
-                "Career change client",
-                "Australian job seeker",
+                "Verified review source",
+                "Approved client feedback",
+                "Real application example",
               ].map((label) => (
                 <Card key={label}>
-                  <div className="flex gap-1 text-gold" aria-label="Review placeholder">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <Star aria-hidden="true" fill="currentColor" key={index} size={16} />
-                    ))}
-                  </div>
                   <Quote aria-hidden="true" className="mt-5 text-brand" size={26} />
+                  <h3 className="mt-4 font-display text-lg font-bold text-navy">{label}</h3>
                   <p className="mt-4 text-sm leading-6 text-muted">
-                    Placeholder for a verified testimonial. Replace only with genuine approved
-                    client feedback before publishing as proof.
+                    Reserved for verified proof only. No fake review text, ratings or unsupported
+                    statistics are displayed.
                   </p>
-                  <p className="mt-4 text-sm font-bold text-navy">{label}</p>
                 </Card>
               ))}
             </div>

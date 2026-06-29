@@ -22,7 +22,7 @@ const defaultLinks: InternalLink[] = [
 
 function page(input: Omit<SitePage, "status" | "links"> & Partial<Pick<SitePage, "status" | "links">>): SitePage {
   return {
-    status: "coming-soon",
+    status: "production",
     links: defaultLinks,
     ...input,
   };
@@ -110,7 +110,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Career Services",
     h1: "Career Coaching",
     intro:
-      "This coming-soon page will outline practical career coaching support for job seekers who need clarity, confidence and application strategy.",
+      "Practical career coaching support for job seekers who need clarity, confidence and application strategy.",
   }),
   page({
     slug: "interview-preparation",
@@ -121,7 +121,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Career Services",
     h1: "Interview Preparation",
     intro:
-      "This page will support job seekers preparing for interviews, behavioural questions and role-specific conversations.",
+      "Interview preparation support for job seekers preparing for behavioural questions, role-specific conversations and stronger employer communication.",
   }),
   page({
     slug: "pricing",
@@ -252,7 +252,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Trust",
     h1: "Our Resume Writing Process",
     intro:
-      "This page will explain the step-by-step process from free resume review through strategy, writing, revisions and final delivery.",
+      "A clear step-by-step process from free resume review through strategy, writing, revisions and final delivery.",
   }),
   page({
     slug: "about",
@@ -263,7 +263,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "About",
     h1: "About Ramsey Resume",
     intro:
-      "This page will introduce the Ramsey Resume brand, values, methodology and experience supporting Australian job seekers.",
+      "Learn about the Ramsey Resume brand, values, methodology and support for Australian job seekers.",
   }),
   page({
     slug: "faq",
@@ -274,7 +274,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "FAQ",
     h1: "Frequently Asked Questions",
     intro:
-      "This page will answer common questions about Ramsey Resume services, turnaround, pricing, revisions and application support.",
+      "Answers to common questions about Ramsey Resume services, turnaround, pricing, revisions and application support.",
   }),
   page({
     slug: "blog",
@@ -285,7 +285,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Blog",
     h1: "Resume Writing Blog",
     intro:
-      "This blog index will publish useful career advice for Australian job seekers and link naturally to related service pages.",
+      "Career advice for Australian job seekers, including resume writing, ATS, cover letter and job application guidance.",
   }),
   page({
     slug: "contact",
@@ -416,7 +416,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Nursing Resume Writing",
     intro:
-      "This industry page will support nurses and healthcare applicants who need resumes showing care, compliance, capability and experience.",
+      "Nursing resume writing support for healthcare applicants who need resumes showing care, compliance, capability and experience.",
   }),
   page({
     slug: "teacher-resume-writing",
@@ -427,7 +427,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Teacher Resume Writing",
     intro:
-      "This industry page will support teachers, education assistants, trainers and school leaders applying for Australian education roles.",
+      "Teacher resume writing support for teachers, education assistants, trainers and school leaders applying for Australian education roles.",
   }),
   page({
     slug: "it-resume-writing",
@@ -438,7 +438,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "IT Resume Writing",
     intro:
-      "This industry page will support IT applicants across software, cybersecurity, data, systems, support and technology project roles.",
+      "IT resume writing support for applicants across software, cybersecurity, data, systems, support and technology project roles.",
   }),
   page({
     slug: "accountant-resume-writing",
@@ -449,7 +449,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Accountant Resume Writing",
     intro:
-      "This industry page will support accountants, bookkeepers, payroll officers and finance professionals.",
+      "Accountant resume writing support for accountants, bookkeepers, payroll officers and finance professionals.",
   }),
   page({
     slug: "engineer-resume-writing",
@@ -460,7 +460,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Engineer Resume Writing",
     intro:
-      "This industry page will support engineering applicants who need to show technical capability, project impact and site experience.",
+      "Engineering resume writing support for applicants who need to show technical capability, project impact and site experience.",
   }),
   page({
     slug: "project-manager-resume-writing",
@@ -471,7 +471,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Project Manager Resume Writing",
     intro:
-      "This industry page will support project managers who need to show delivery outcomes, stakeholder management, risk, budgets and governance.",
+      "Project manager resume writing support for applicants who need to show delivery outcomes, stakeholder management, risk, budgets and governance.",
   }),
   page({
     slug: "electrician-resume-writing",
@@ -482,7 +482,7 @@ export const sitePages: SitePage[] = [
     eyebrow: "Industries",
     h1: "Electrician Resume Writing",
     intro:
-      "This industry page will support electricians and tradespeople who need to show licences, safety, technical skills and site experience.",
+      "Electrician resume writing support for tradespeople who need to show licences, safety, technical skills and site experience.",
   }),
   page({
     slug: "skilled-migrant-resume-writing",

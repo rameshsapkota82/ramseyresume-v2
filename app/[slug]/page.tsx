@@ -26,6 +26,7 @@ export function generateStaticParams() {
     "resume-writer-perth",
     "resume-writer-western-australia",
     "resume-writing-australia",
+    "pricing",
     "contact",
     "get-a-quote",
   ]);
