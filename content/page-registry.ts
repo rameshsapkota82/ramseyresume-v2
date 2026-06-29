@@ -53,10 +53,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "ATS Resume Writing Service Australia | Ramsey Resume",
     description:
       "ATS-friendly resume writing for Australian job applications, with clean formatting and role-aligned keywords.",
+    status: "production",
     eyebrow: "Resume Services",
     h1: "ATS Resume Writing Service",
     intro:
-      "This page will become the dedicated ATS resume writing service page, helping job seekers understand clean formatting, keyword alignment and recruiter-friendly structure.",
+      "ATS resume writing for Australian job seekers who need clean formatting, keyword alignment and recruiter-friendly structure for online applications.",
   }),
   page({
     slug: "cover-letter-writing",

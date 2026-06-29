@@ -13,7 +13,9 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return pageSlugs.filter((slug) => slug !== "resume-writing").map((slug) => ({ slug }));
+  const productionRoutes = new Set(["resume-writing", "ats-resume-writing"]);
+
+  return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
