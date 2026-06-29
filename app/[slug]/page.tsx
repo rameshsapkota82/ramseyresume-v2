@@ -26,6 +26,8 @@ export function generateStaticParams() {
     "resume-writer-perth",
     "resume-writer-western-australia",
     "resume-writing-australia",
+    "contact",
+    "get-a-quote",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));

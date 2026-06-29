@@ -293,6 +293,7 @@ export const sitePages: SitePage[] = [
     seoTitle: "Contact Ramsey Resume | Resume Writer Perth",
     description:
       "Contact Ramsey Resume for professional resume writing support in Perth and Australia-wide.",
+    status: "production",
     eyebrow: "Contact",
     h1: "Contact Ramsey Resume",
     intro:
@@ -310,10 +311,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Get a Resume Writing Quote | Ramsey Resume",
     description:
       "Request a free resume review or quote for resume writing, cover letters, LinkedIn profiles and selection criteria.",
+    status: "production",
     eyebrow: "Free Resume Review",
     h1: "Get a Free Resume Review",
     intro:
-      "This page will become the primary lead form for free resume reviews, quote requests and application support enquiries.",
+      "Request a free resume review or quote for resume writing, cover letters, LinkedIn profiles and selection criteria.",
     links: [
       { label: "Resume Writing", href: "/resume-writing/" },
       { label: "ATS Resume Writing", href: "/ats-resume-writing/" },
