@@ -312,6 +312,9 @@ export default function CoverLetterWritingPage() {
                 <Button href="/pricing/" variant="secondary">
                   Get Quote
                 </Button>
+                <Button href="/contact/" variant="secondary">
+                  Contact
+                </Button>
               </div>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-ink sm:grid-cols-2">
                 {[

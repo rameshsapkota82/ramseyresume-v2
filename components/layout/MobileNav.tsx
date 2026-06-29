@@ -23,7 +23,7 @@ export function MobileNav() {
       </button>
 
       {open ? (
-        <div className="absolute left-0 right-0 top-full z-50 border-t border-line bg-white p-4 shadow-soft">
+        <div className="absolute left-0 right-0 top-full z-50 max-h-[calc(100vh-72px)] overflow-y-auto border-t border-line bg-white p-4 pb-6 shadow-soft">
           <nav aria-label="Mobile navigation" className="space-y-4">
             {primaryNavigation.map((item) => (
               <div key={item.label}>
@@ -57,6 +57,9 @@ export function MobileNav() {
             </Button>
             <Button href={siteConfig.whatsappHref} variant="whatsapp" className="w-full">
               WhatsApp Us
+            </Button>
+            <Button href={siteConfig.phoneHref} variant="secondary" className="w-full">
+              Call {siteConfig.phoneDisplay}
             </Button>
           </div>
         </div>

@@ -59,6 +59,9 @@ export function CommercialServicePage({ content }: CommercialServicePageProps) {
                 <Button href="/pricing/" variant="secondary">
                   Get Quote
                 </Button>
+                <Button href="/contact/" variant="secondary">
+                  Contact
+                </Button>
               </div>
               <ul className="mt-8 grid gap-3 text-sm font-semibold text-ink sm:grid-cols-2">
                 {content.heroHighlights.map((item) => (
@@ -310,6 +313,9 @@ export function CommercialServicePage({ content }: CommercialServicePageProps) {
               <Button href={siteConfig.whatsappHref} variant="whatsapp">
                 <MessageCircle aria-hidden="true" className="mr-2" size={18} />
                 WhatsApp Us
+              </Button>
+              <Button href="/contact/" variant="ghost">
+                Contact
               </Button>
             </div>
           </div>

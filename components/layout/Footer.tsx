@@ -6,6 +6,16 @@ import { Button } from "@/components/ui/Button";
 
 const footerColumns = [
   {
+    title: "Quick Links",
+    links: [
+      { label: "Pricing", href: "/pricing/" },
+      { label: "Reviews", href: "/reviews/" },
+      { label: "Our Process", href: "/our-process/" },
+      { label: "Contact", href: "/contact/" },
+      { label: "Get a Quote", href: "/get-a-quote/" },
+    ],
+  },
+  {
     title: "Resume Services",
     links:
       primaryNavigation.find((item) => item.label === "Resume Services")?.children ?? [],
@@ -41,7 +51,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {footerColumns.map((column) => (
               <div key={column.title}>
                 <h3 className="text-sm font-bold uppercase tracking-wide text-white">
