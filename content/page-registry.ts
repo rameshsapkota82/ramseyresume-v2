@@ -371,10 +371,11 @@ export const sitePages: SitePage[] = [
     seoTitle: "Government Resume Writing Australia | Ramsey Resume",
     description:
       "Government resume and application writing support for Australian public sector roles.",
+    status: "production",
     eyebrow: "Specialist Resume Services",
     h1: "Government Resume Writing",
     intro:
-      "This specialist page will support government applicants who need targeted resumes, cover letters and selection criteria alignment.",
+      "Government resume writing for Australian public sector applicants who need targeted resumes, cover letters and selection criteria alignment.",
   }),
   page({
     slug: "graduate-resume-writing",
