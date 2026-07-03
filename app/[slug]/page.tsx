@@ -29,6 +29,7 @@ export function generateStaticParams() {
     "pricing",
     "contact",
     "get-a-quote",
+    "nursing-resume-writing",
   ]);
 
   return pageSlugs.filter((slug) => !productionRoutes.has(slug)).map((slug) => ({ slug }));

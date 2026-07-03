@@ -19,9 +19,9 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "FIFO Resume Writing Australia | Mining Resume Writer Perth",
+  title: "FIFO Resume Writing Australia | Ramsey Resume",
   description:
-    "FIFO resume writing for WA mining, resources, shutdown, trades and site-based roles. Perth-based support for Australian FIFO applicants.",
+    "FIFO resume writing for WA mining, resources, shutdown, trades and site-based roles. Perth-based support for Australian FIFO and mining applicants nationwide.",
   path: "/fifo-resume-writing/",
 });
 
@@ -258,6 +258,11 @@ const content: ServicePageContent = {
       title: "Resume Writer Perth",
       text: "Local Perth resume writing support for WA job seekers and FIFO applicants.",
       href: "/resume-writer-perth/",
+    },
+    {
+      title: "Resume Writer Western Australia",
+      text: "Resume writing support across WA, including regional and remote FIFO applicants.",
+      href: "/resume-writer-western-australia/",
     },
   ],
   finalCta: {

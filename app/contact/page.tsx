@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "Contact Ramsey Resume | Resume Writer Perth",
+  title: "Contact Ramsey Resume | Perth Resume Writer, WA",
   description:
     "Contact Ramsey Resume for professional resume writing, ATS resumes, cover letters, LinkedIn profiles and selection criteria support in Perth and Australia-wide.",
   path: "/contact/",
@@ -21,10 +21,14 @@ const contactSchema = {
   name: "Contact Ramsey Resume",
   url: `${siteConfig.url}/contact/`,
   mainEntity: {
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     name: "Ramsey Resume",
     telephone: "+61438782206",
     email: siteConfig.email,
+    areaServed: siteConfig.areaServed.map((area) => ({
+      "@type": "AdministrativeArea",
+      name: area,
+    })),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Perth",
@@ -50,6 +54,9 @@ export default function ContactPage() {
                 Need help choosing the right resume writing service? Contact Ramsey Resume for
                 professional resume writing, ATS resumes, cover letters, LinkedIn profiles and
                 selection criteria support across Perth, WA and Australia.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-teal">
+                Based in Perth, WA — servicing clients Australia-wide and in New Zealand.
               </p>
               <div className="mt-8 grid gap-4">
                 {[

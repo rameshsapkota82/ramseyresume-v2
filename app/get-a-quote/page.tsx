@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "Get a Free Resume Review | Ramsey Resume",
+  title: "Get a Free Resume Review | Ramsey Resume, Perth WA",
   description:
-    "Request a free resume review or quote for resume writing, ATS resumes, cover letters, LinkedIn profiles and selection criteria support.",
+    "Request a free resume review or quote for resume writing, ATS resumes, cover letters, LinkedIn profiles and selection criteria support. Perth-based, Australia-wide.",
   path: "/get-a-quote/",
 });
 

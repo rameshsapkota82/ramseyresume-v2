@@ -17,7 +17,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Resume Writer Perth | Professional Resume Writing Perth WA",
+  title: "Resume Writer Perth, WA | Ramsey Resume",
   description:
     "Perth resume writer helping WA job seekers with professional resumes, ATS resumes, cover letters, LinkedIn profiles and government applications.",
   path: "/resume-writer-perth/",

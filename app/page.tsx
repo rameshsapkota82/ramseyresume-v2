@@ -32,6 +32,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { ResumePreview } from "@/components/sections/ResumePreview";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -182,12 +183,15 @@ const faqSchema = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "LocalBusiness"],
   name: siteConfig.name,
   url: siteConfig.url,
   telephone: "+61438782206",
   email: siteConfig.email,
-  areaServed: ["Perth", "Western Australia", "Australia"],
+  areaServed: siteConfig.areaServed.map((area) => ({
+    "@type": "AdministrativeArea",
+    name: area,
+  })),
   address: {
     "@type": "PostalAddress",
     addressLocality: "Perth",
@@ -195,7 +199,7 @@ const localBusinessSchema = {
     addressCountry: "AU",
   },
   description:
-    "Professional resume writing, cover letter, LinkedIn profile and selection criteria support for Australian job seekers.",
+    "Professional resume writing, cover letter, LinkedIn profile and selection criteria support based in Perth, WA — servicing clients Australia-wide and in New Zealand.",
 };
 
 export default function Home() {
@@ -206,11 +210,11 @@ export default function Home() {
 
       <Section className="overflow-hidden bg-soft">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-teal shadow-card">
                 <CheckCircle aria-hidden="true" size={17} />
-                Perth-based resume support. Australia-wide service.
+                Perth-based resume support. Australia-wide and New Zealand service.
               </p>
               <h1 className="font-display text-4xl font-extrabold leading-tight text-navy md:text-5xl lg:text-6xl">
                 Professional Resume Writing Services in Perth & Australia-Wide
@@ -225,6 +229,10 @@ export default function Home() {
                 their experience with clarity, strategy and professionalism. Your application should
                 do more than list duties. It should show your value, match the role and make it easy
                 for employers to understand why you are the right fit.
+              </p>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
+                Based in Perth, WA and servicing clients Australia-wide, with remote support also
+                available for job seekers in New Zealand.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/get-a-quote/">Get a Free Resume Review</Button>
@@ -248,30 +256,65 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="relative">
-              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-gold/15 blur-3xl" />
-              <Card className="relative overflow-hidden p-0">
-                <div className="bg-navy px-6 py-5 text-white">
-                  <p className="text-sm font-bold uppercase tracking-wide text-white/70">
-                    Free Resume Review
-                  </p>
-                  <h2 className="mt-2 font-display text-2xl font-extrabold text-white">
-                    See what your resume needs before your next application.
-                  </h2>
-                </div>
-                <div className="space-y-4 p-6">
-                  {["Professional profile", "Key skills", "Career achievements", "ATS structure"].map(
-                    (item) => (
-                      <div className="rounded-lg border border-line bg-soft p-4" key={item}>
-                        <div className="mb-2 h-3 w-1/2 rounded-full bg-brand/25" />
-                        <div className="h-2 w-full rounded-full bg-line" />
-                        <div className="mt-2 h-2 w-4/5 rounded-full bg-line" />
-                        <span className="sr-only">{item}</span>
-                      </div>
-                    ),
-                  )}
-                </div>
-              </Card>
+            <ResumePreview />
+          </div>
+        </Container>
+      </Section>
+
+      {/* TEMP: template comparison for review — remove before deploy */}
+      <Section className="bg-white">
+        <Container>
+          <div className="mb-10 text-center">
+            <p className="text-sm font-bold uppercase tracking-wide text-teal">
+              Internal review — not final
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
+              Resume Template Comparison
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-8 text-muted">
+              Three template directions using the same sample content, shown here temporarily for
+              side-by-side review before one is selected.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            <div>
+              <div className="mb-5 text-center">
+                <h3 className="font-display text-xl font-bold text-navy">1. Classic</h3>
+                <p className="mt-1 text-sm text-muted">
+                  Straight-on, centered, traditional serif headings, single column, conservative and
+                  formal.
+                </p>
+              </div>
+              <div id="preview-classic">
+                <ResumePreview variant="classic" />
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-5 text-center">
+                <h3 className="font-display text-xl font-bold text-navy">2. Modern</h3>
+                <p className="mt-1 text-sm text-muted">
+                  Very slight tilt, subtle shadow and depth, sans-serif headings, two-column layout
+                  with a sidebar for contact and skills.
+                </p>
+              </div>
+              <div id="preview-modern">
+                <ResumePreview variant="modern" />
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-5 text-center">
+                <h3 className="font-display text-xl font-bold text-navy">3. Minimal</h3>
+                <p className="mt-1 text-sm text-muted">
+                  Straight-on, ultra-clean, generous whitespace, single accent color, understated and
+                  premium.
+                </p>
+              </div>
+              <div id="preview-minimal">
+                <ResumePreview variant="minimal" />
+              </div>
             </div>
           </div>
         </Container>

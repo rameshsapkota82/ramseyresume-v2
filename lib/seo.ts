@@ -18,7 +18,9 @@ export function createMetadata({
   const imageUrl = new URL(image, siteConfig.url).toString();
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     alternates: {
       canonical: url,

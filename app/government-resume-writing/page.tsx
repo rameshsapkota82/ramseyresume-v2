@@ -20,7 +20,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Government Resume Writing Australia | Public Sector Resume Writer",
+  title: "Government Resume Writing Australia | Ramsey Resume",
   description:
     "Government resume writing for Australian public sector applications. Perth-based support for APS, WA Government, selection criteria and capability alignment.",
   path: "/government-resume-writing/",

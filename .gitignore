@@ -1,5 +1,8 @@
 .next
 .open-next
+.wrangler
+.config
+.npm
 .vercel
 .env
 .env.local

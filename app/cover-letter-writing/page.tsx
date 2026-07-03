@@ -27,7 +27,7 @@ import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "Cover Letter Writing Service Australia | Professional Cover Letter Writer",
+  title: "Cover Letter Writing Service Australia | Ramsey Resume",
   description:
     "Professional cover letter writing for Australian job seekers. Perth-based support for tailored cover letters, government applications and career changes.",
   path: "/cover-letter-writing/",

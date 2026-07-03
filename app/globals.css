@@ -39,4 +39,50 @@ body {
   .form-input {
     @apply w-full rounded-lg border border-line bg-white px-4 py-3 text-base text-ink shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20;
   }
+
+  .resume-heading {
+    @apply border-b border-line pb-1.5 font-serif text-[10.5px] font-bold uppercase tracking-[0.14em] text-navy;
+  }
+
+  .resume-body {
+    @apply text-[11.5px] leading-[1.45] text-ink;
+  }
+
+  .whatsapp-fab {
+    animation: whatsapp-bump 2.2s ease-in-out 2;
+  }
+
+  .whatsapp-fab-ring {
+    animation: whatsapp-ring 1.8s ease-out 2;
+  }
+}
+
+@keyframes whatsapp-bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  80% {
+    transform: scale(1);
+  }
+}
+
+@keyframes whatsapp-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
 }

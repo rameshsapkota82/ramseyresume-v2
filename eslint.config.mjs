@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 export default [
   ...tseslint.configs.recommended,
   {
-    ignores: [".next/**", ".open-next/**", ".vercel/**", ".output/**", "node_modules/**"],
+    ignores: [".next/**", ".open-next/**", ".wrangler/**", ".config/**", ".npm/**", ".vercel/**", ".output/**", "node_modules/**"],
   },
   {
     files: ["**/*.{ts,tsx}"],

@@ -19,7 +19,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Selection Criteria Writing Service Australia | Government Applications",
+  title: "Selection Criteria Writing Service Australia | Ramsey Resume",
   description:
     "Selection criteria writing for Australian government job applications. Perth-based support for STAR examples, capability responses and public sector applications.",
   path: "/selection-criteria-writing/",

@@ -18,7 +18,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Resume Writing Australia | Professional Resume Service",
+  title: "Resume Writing Australia | Ramsey Resume",
   description:
     "Professional resume writing services for Australian job seekers. ATS-friendly resumes, cover letters, LinkedIn profiles and application support Australia-wide.",
   path: "/resume-writing-australia/",

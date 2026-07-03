@@ -17,9 +17,9 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Graduate Resume Writing Australia | Entry Level Resume Writer",
+  title: "Graduate Resume Writing Australia | Ramsey Resume",
   description:
-    "Graduate resume writing for Australian students, graduates and early-career job seekers. Perth-based support for entry-level applications.",
+    "Graduate resume writing for Australian students, graduates and early-career job seekers. Perth-based support for entry-level applications and career starts.",
   path: "/graduate-resume-writing/",
 });
 
@@ -140,7 +140,7 @@ const content: ServicePageContent = {
         icon: PenLine,
       },
       {
-        title: "Future-ready structure",
+        title: "Career-ready structure",
         text: "The resume is structured so it can grow as you gain more professional experience.",
         icon: FileCheck,
       },

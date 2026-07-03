@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "cloudflare:build": "opennextjs-cloudflare build",
-    "cloudflare:preview": "npm run cloudflare:build && wrangler dev",
+    "cloudflare:preview": "rm -rf .open-next && npm run cloudflare:build && wrangler dev",
     "cloudflare:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "deploy": "npm run cloudflare:deploy",
     "start": "next start",

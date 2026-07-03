@@ -19,7 +19,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "Executive Resume Writing Australia | Senior Leadership Resume Writer",
+  title: "Executive Resume Writing Australia | Ramsey Resume",
   description:
     "Executive resume writing for Australian managers, leaders and senior professionals. Perth-based support for leadership positioning and career documents.",
   path: "/executive-resume-writing/",

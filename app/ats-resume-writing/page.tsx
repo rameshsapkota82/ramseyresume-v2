@@ -29,7 +29,7 @@ import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "ATS Resume Writing Service Australia | ATS Friendly Resume",
+  title: "ATS Resume Writing Service Australia | Ramsey Resume",
   description:
     "ATS resume writing for Australian job seekers. Perth-based professional resume writer creating ATS-friendly resumes with keyword optimisation and clean structure.",
   path: "/ats-resume-writing/",

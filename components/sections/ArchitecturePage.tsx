@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, MessageCircle, Phone, SearchCheck } from "lucide-react";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
@@ -22,7 +23,7 @@ const defaultFaqs = [
   {
     question: "Can Ramsey Resume help clients outside Perth?",
     answer:
-      "Yes. Ramsey Resume is based in Perth, Western Australia and supports job seekers Australia-wide through email, phone and WhatsApp.",
+      "Yes. Ramsey Resume is based in Perth, Western Australia and supports job seekers Australia-wide, and in New Zealand, through email, phone and WhatsApp.",
   },
   {
     question: "Can I start if I do not know which service I need?",
@@ -37,8 +38,65 @@ const defaultFaqs = [
 ];
 
 export function ArchitecturePage({ page }: ArchitecturePageProps) {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    url: `${siteConfig.url}/${page.slug}/`,
+    description: page.description,
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: defaultFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: page.title,
+        item: `${siteConfig.url}/${page.slug}/`,
+      },
+    ],
+  };
+  const serviceSchema =
+    page.eyebrow === "Industries"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: page.h1,
+          name: page.h1,
+          description: page.description,
+          url: `${siteConfig.url}/${page.slug}/`,
+          areaServed: siteConfig.areaServed.map((area) => ({
+            "@type": "AdministrativeArea",
+            name: area,
+          })),
+          provider: {
+            "@type": "ProfessionalService",
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+        }
+      : null;
+
   return (
     <>
+      <JsonLd data={webPageSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      {serviceSchema ? <JsonLd data={serviceSchema} /> : null}
       <Section className="bg-soft">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
@@ -95,13 +153,13 @@ export function ArchitecturePage({ page }: ArchitecturePageProps) {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-bold uppercase tracking-wide text-teal">Overview</p>
             <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
-              Built for clarity, confidence and stronger applications
+              Practical guidance for stronger applications
             </h2>
             <p className="mt-5 leading-8 text-muted">
-              This page supports the broader Ramsey Resume website architecture by giving job
-              seekers a clear place to learn, compare options and move towards the right service.
-              Content is written for humans first, with SEO structure, internal links and conversion
-              pathways built in.
+              This page gives job seekers a clear place to learn about the topic, compare related
+              Ramsey Resume services and move toward the right next step. The content is written
+              for humans first and supported by SEO structure, internal links and clear
+              conversion pathways.
             </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -121,7 +179,7 @@ export function ArchitecturePage({ page }: ArchitecturePageProps) {
             <div>
               <p className="text-sm font-bold uppercase tracking-wide text-teal">Process</p>
               <h2 className="mt-3 font-display text-3xl font-extrabold text-navy md:text-4xl">
-                How to get the right support
+                How Ramsey Resume support works
               </h2>
               <p className="mt-5 leading-8 text-muted">
                 The process is designed to be simple and practical. Share your current documents,

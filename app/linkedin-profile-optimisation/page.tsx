@@ -18,7 +18,7 @@ import { siteConfig } from "@/lib/site";
 import type { ServiceFaq, ServicePageContent } from "@/types/service-page";
 
 export const metadata: Metadata = createMetadata({
-  title: "LinkedIn Profile Optimisation Australia | LinkedIn Profile Writer",
+  title: "LinkedIn Profile Optimisation Australia | Ramsey Resume",
   description:
     "LinkedIn profile optimisation for Australian professionals. Perth-based support for stronger recruiter visibility, positioning and profile content.",
   path: "/linkedin-profile-optimisation/",
